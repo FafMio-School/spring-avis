@@ -1,8 +1,9 @@
 name: Maven Build
 
 on:
-  tag:
-    branches: [ develop ]
+  push:
+    tags:
+      - v*
 
 jobs:
   build:
