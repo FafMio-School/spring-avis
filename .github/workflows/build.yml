@@ -1,8 +1,8 @@
 name: Maven Build
 
 on:
-  pull_request:
-    branches: [ master ]
+  tag:
+    branches: [ develop ]
 
 jobs:
   build:
