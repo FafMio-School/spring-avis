@@ -10,12 +10,25 @@
 <body>
 <jsp:include page="components/portfolio/bar.jsp"/>
 <jsp:include page="components/navbar.jsp">
-    <jsp:param name="link" value="/"/>
+    <jsp:param name="link" value="editeurs"/>
 </jsp:include>
-<h1>Les éditeurs</h1>
-<h2>Voici la liste des éditeurs :</h2>
-<c:forEach items="${editeurs}" var="editeur">
-    ${editeur.nom}<br>
-</c:forEach>
+
+<section id="editors" class="mt-4">
+    <div class="container">
+        <h2 class="mb-3">Voici la liste des éditeurs :</h2>
+        <table class="table table-hover">
+            <thead>
+            <th>Nom de l'éditeur</th>
+            </thead>
+            <tbody>
+            <c:forEach items="${editeurs}" var="editeur">
+                <tr>
+                    <td>${editeur.nom}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</section>
 </body>
 </html>

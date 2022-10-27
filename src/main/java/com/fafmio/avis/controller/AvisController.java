@@ -78,7 +78,7 @@ public class AvisController {
 
 	@GetMapping(value = "/connexion")
 	public ModelAndView connexionGet(/*@ModelAttribute UtilisateurDTO utilisateur*/) {
-		ModelAndView mav = new ModelAndView("connexion");
+		ModelAndView mav = new ModelAndView("authentication/connexion");
 //		mav.getModel().put("utilisateur", utilisateur);
 //		mav.getModelMap().addAttribute("utilisateur", new UtilisateurDTO());
 
@@ -97,7 +97,7 @@ public class AvisController {
 		} else {
 			// On redirige l'utilisateur vers la page de connexion en le notifiant de l'erreur
 			// de connexion
-			ModelAndView mav = new ModelAndView("connexion");
+			ModelAndView mav = new ModelAndView("authentication/connexion");
 			mav.addObject("notification", "Erreur de connection");
 			return mav;
 		}
@@ -210,7 +210,7 @@ public class AvisController {
 
 	@GetMapping(value = "/inscription")
 	public ModelAndView inscriptionGet(@ModelAttribute Joueur joueur) {
-		ModelAndView mav = new ModelAndView("inscription");
+		ModelAndView mav = new ModelAndView("authentication/inscription");
 		return mav;
 	}
 

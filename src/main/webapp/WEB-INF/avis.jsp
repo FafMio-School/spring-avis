@@ -33,13 +33,13 @@
             </select>
         </div>
         <div>
-            <label for="description">Description :</label>
-            <textarea name="DESCRIPTION" rows="" cols=""></textarea>
+            <label for="DESCRIPTION">Description :</label>
+            <textarea name="DESCRIPTION" id="DESCRIPTION" rows="" cols=""></textarea>
         </div>
 
       <input type="submit" value="Envoyer" />
     </form>
 </section>
-<a href="/index">Retour index</a>
+<a href="/">Retour index</a>
 </body>
 </html>

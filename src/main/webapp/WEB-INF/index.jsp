@@ -17,14 +17,16 @@
     <div class="container">
         <table class="table table-hover">
             <thead>
-                <th>Image</th>
-                <th>Nom <a class="text-muted fst-italic" href="index?sort=nom">trier</a></th>
-                <th>Genre <a class="text-muted fst-italic" href="index?sort=genre">trier</a></th>
-                <th>Plateforme</th>
-                <th>Date de sortie <a class="text-muted fst-italic" href="index?sort=dateSortie">trier</a></th>
-                <th>Editeur <a class="text-muted fst-italic" href="index?sort=editeur">trier</a></th>
-                <th>Modele Economique <a class="text-muted fst-italic" href="index?sort=modeleEconomique">trier</a></th>
-                <th>Actions</th>
+                <tr>
+                    <th>Image</th>
+                    <th>Nom <a class="text-muted fst-italic" href="index?sort=nom">trier</a></th>
+                    <th>Genre <a class="text-muted fst-italic" href="index?sort=genre">trier</a></th>
+                    <th>Plateforme</th>
+                    <th>Date de sortie <a class="text-muted fst-italic" href="index?sort=dateSortie">trier</a></th>
+                    <th>Editeur <a class="text-muted fst-italic" href="index?sort=editeur">trier</a></th>
+                    <th>Modele Economique <a class="text-muted fst-italic" href="index?sort=modeleEconomique">trier</a></th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody>
             <c:forEach items="${pageDeJeux.content}" var="jeu">
@@ -40,27 +42,40 @@
                     <td>${jeu.dateSortie}</td>
                     <td>${jeu.editeur.nom}</td>
                     <td>${jeu.modeleEconomique.nom}</td>
-                    <td><a href="/lesAvis?ID=${jeu.id}">Voir les avis</a></td>
-                    <td><a href="/jeu?ID=${jeu.id}">Modifier</a></td>
-                    <td><a href="/televersement?ID=${jeu.id}">Ajouter une image</a></td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a href="/lesAvis?ID=${jeu.id}" class="btn btn-primary">Voir les avis</a>
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="/televersement?ID=${jeu.id}">Changer l'image</a>
+                                    <a class="dropdown-item text-warning" href="/jeu?ID=${jeu.id}">Modifier le jeu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
+
+        <c:if test="${!pageDeJeux.first}">
+            <a href="?page=0&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23EE;</a>
+            <a href="?page=${pageDeJeux.number-1}&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23EA;</a>
+        </c:if>
+        <p class="text-muted fst-italic">
+        Page ${pageDeJeux.getNumber()+1} :
+        Jeux de ${pageDeJeux.totalElements == 0 ? 0 : pageDeJeux.size * pageDeJeux.number+1}
+        à ${pageDeJeux.numberOfElements + (pageDeJeux.size * pageDeJeux.number)} sur ${pageDeJeux.totalElements} Jeu(x)
+        </p>
+        <c:if test="${!pageDeJeux.last}">
+            <a href="?page=${pageDeJeux.number+1}&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23E9;</a>
+            <a href="?page=${pageDeJeux.totalPages - 1}&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23ED;</a>
+        </c:if>
+
     </div>
 </section>
 
-<c:if test="${!pageDeJeux.first}">
-    <a href="?page=0&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23EE;</a>
-    <a href="?page=${pageDeJeux.number-1}&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23EA;</a>
-</c:if>
-Page ${pageDeJeux.getNumber()+1} :
-Jeux de ${pageDeJeux.totalElements == 0 ? 0 : pageDeJeux.size * pageDeJeux.number+1}
-à ${pageDeJeux.numberOfElements + (pageDeJeux.size * pageDeJeux.number)} sur ${pageDeJeux.totalElements} Jeu(x)
-<c:if test="${!pageDeJeux.last}">
-    <a href="?page=${pageDeJeux.number+1}&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23E9;</a>
-    <a href="?page=${pageDeJeux.totalPages - 1}&sort=${pageDeJeux.sort.iterator().next().property},${pageDeJeux.sort.iterator().next().direction}">&#x23ED;</a>
-</c:if>
 
 </body>
 </html>

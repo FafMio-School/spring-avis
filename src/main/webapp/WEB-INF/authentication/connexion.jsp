@@ -6,13 +6,11 @@
 <head>
     <title>Liste des jeux</title>
 
-    <jsp:include page="components/header.jsp"/>
+    <jsp:include page="../components/header.jsp"/>
 </head>
 <body>
-<jsp:include page="components/portfolio/bar.jsp"/>
+<jsp:include page="../components/portfolio/bar.jsp"/>
 <section class="container" id="connexion">
-
-
     <div class="row justify-content-center">
         <div class="col-6">
             <form action="connexion" method="post" >
