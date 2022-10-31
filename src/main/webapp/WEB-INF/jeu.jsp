@@ -74,7 +74,7 @@
                             <form:label path="classification">Classification</form:label>
                             <form:select path="classification" cssClass="form-select "
                                          cssErrorClass="form-select is-invalid">
-                                <form:option value="">Merci de choisir une classification</form:option>
+                                <form:option value="">- - -</form:option>
                                 <form:options items="${classifications}" itemValue="id" itemLabel="nom"/>
                             </form:select>
                             <form:errors path="classification" cssClass="text-danger"/>
@@ -86,7 +86,7 @@
                         <div class="form-group">
                             <form:label path="genre">Genre</form:label>
                             <form:select path="genre" cssClass="form-select " cssErrorClass="form-select is-invalid">
-                                <form:option value="">Merci de choisir un genre</form:option>
+                                <form:option value="">- - -</form:option>
                                 <form:options items="${genres}" itemValue="id" itemLabel="nom"/>
                             </form:select>
                             <form:errors path="genre" cssClass="text-danger"/>

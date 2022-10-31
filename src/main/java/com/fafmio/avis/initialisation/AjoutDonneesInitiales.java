@@ -727,6 +727,10 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
         }
 
 
+        plateformeService.ajouterPlateforme("PC");
+        plateformeService.ajouterPlateforme("Game Cube");
+        plateformeService.ajouterPlateforme("Nintendo DS");
+        plateformeService.ajouterPlateforme("Switch");
         plateformeService.ajouterPlateforme("Wii");
         plateformeService.ajouterPlateforme("Wii U");
         plateformeService.ajouterPlateforme("Playstation 1");
@@ -734,7 +738,6 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
         plateformeService.ajouterPlateforme("Playstation 3");
         plateformeService.ajouterPlateforme("Playstation 4");
         plateformeService.ajouterPlateforme("Playstation 5");
-        plateformeService.ajouterPlateforme("Switch");
         plateformeService.ajouterPlateforme("Xbox 360");
         plateformeService.ajouterPlateforme("Xbox One");
         plateformeService.ajouterPlateforme("Xbox Series");
