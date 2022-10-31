@@ -21,3 +21,4 @@ log/
 ### IDE ###
 .vscode/
 .idea/
+/src/main/webapp/images/

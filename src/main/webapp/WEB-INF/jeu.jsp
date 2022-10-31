@@ -60,8 +60,8 @@
                     <div class="col-4 mb-4">
                         <div class="form-group">
                             <form:label path="editeur">Éditeur</form:label>
-                            <form:select path="editeur" cssClass="form-select " cssErrorClass="form-select is-invalid">
-                                <form:option value="">Merci de choisir un éditeur</form:option>
+                            <form:select path="editeur" cssClass="form-select " cssErrorClass="form-select is-invalid" >
+                                <form:option value="">- - -</form:option>
                                 <form:options items="${editeurs}" itemValue="id" itemLabel="nom"/>
                             </form:select>
                             <form:errors path="editeur" cssClass="text-danger"/>

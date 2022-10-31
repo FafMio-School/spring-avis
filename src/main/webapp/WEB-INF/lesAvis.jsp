@@ -36,6 +36,11 @@
             </tbody>
         </table>
 
+        <c:choose>
+        <c:when test="${sessionScope.utilisateur ne null }">
+            <a href="/avis" class="btn btn-primary float-end">Ajouter un avis</a>
+        </c:when>
+        </c:choose>
         <a href="/" class="btn btn-link float-end">Retour à l'acceuil</a>
         <p class="fst-italic text-muted">
             Avis de <strong>${pageDAvis.totalElements == 0 ? 0 : pageDAvis.size * pageDAvis.number+1}</strong>

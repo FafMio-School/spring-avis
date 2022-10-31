@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="d-flex flex-row gap-2">
                                 <div class="input-group">
-                                    <input class="form-control" type="file" name="FICHIER" id="FICHIER" accept="image/png, image/jpeg"/>
+                                    <input class="form-control" type="file" name="FICHIER" id="FICHIER" accept="image/png, image/jpeg" required/>
                                     <button class="btn btn-success" type="submit">Téléverser</button>
                                 </div>
                             </div>
